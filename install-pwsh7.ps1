@@ -12,7 +12,7 @@ Write-Host Create download url
 $downloadurl = "https://github.com/$repo/releases/download/$tag/$filename"
 Write-Host $download
 
-Write-host Download the PowerShell 7 MSI package
+Write-host Download the PowerShell 7 MSI package: $filename
 Invoke-WebRequest -Uri $downloadurl -OutFile $env:TEMP\$filename
 
 Write-host Install PowerShell 7
