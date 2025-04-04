@@ -3,7 +3,7 @@ $repo = "PowerShell/PowerShell"
 $releasesLatest = "https://api.github.com/repos/$repo/releases/latest"
 
 Write-Host Determining latest release
-$tag = (Invoke-WebRequest $releasesLatest | ConvertFrom-Json)[0].tag_name
+$tag = (Invoke-WebRequest $releasesLatest -UseBasicParsing| ConvertFrom-Json)[0].tag_name
 
 Write-Host Construct filename
 $filename = "Powershell-" + $tag.substring(1) + "-win-x64.msi"
